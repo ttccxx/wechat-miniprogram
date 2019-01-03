@@ -9,7 +9,7 @@
 	},
 	"miniprogramRoot": "dist/",
 	"compileType": "miniprogram",
-	"appid": "wx11517929be41cb58",
+	"appid": "wxe6e1b5630f5d504a",
 	"projectname": "Socially",
 	"condition": {
 		"search": {
@@ -29,7 +29,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 9,
+			"current": 3,
 			"list": [
 				{
 					"id": 0,
@@ -44,16 +44,16 @@
 					"query": ""
 				},
 				{
-					"id": -1,
-					"name": "invite_add",
-					"pathName": "pages/invite_add",
+					"id": 2,
+					"name": "invite_accept",
+					"pathName": "invite/invite_accept",
 					"query": ""
 				},
 				{
 					"id": 3,
 					"name": "start",
 					"pathName": "pages/start",
-					"query": "eventKey=1&statID=oaSTc4mmsrY5LFncZexK4Zczzg0I",
+					"query": "eventKey=42&statID=oQypW4_Bb9MRVUe8qaF9WLQyLejM",
 					"scene": "1007"
 				},
 				{

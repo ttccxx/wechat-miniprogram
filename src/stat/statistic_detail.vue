@@ -14,14 +14,15 @@
       .weui-cell
         label 参与人数: {{stat.people}}
     <div class="echarts-wrap">
-      <mpvue-echarts :echarts="echarts" :onInit="handleInit" ref="echarts" />
+      <button @click="initChart">查看统计结果</button>
+      <mpvue-echarts lazyLoad :echarts="echarts" :onInit="handleInit" ref="echarts" />
     </div>
     button(open-type="share" class="share") 分享统计
 </template>
 
 <script>
 import { mapState, mapMutations } from 'vuex'
-import * as echarts from 'echarts/dist/echarts.simple'
+import * as echarts from 'echarts/dist/echarts.simple.min'
 import mpvueEcharts from 'mpvue-echarts'
 
 let chart = null
@@ -36,6 +37,7 @@ export default {
       option: null,
       stat: {
       },
+      eventKey: '',
       result: {}
     }
   },
@@ -148,7 +150,7 @@ export default {
           }
         ]
       }
-      // this.$refs.echarts.init()
+      this.$refs.echarts.init()
     },
     handleInit (canvas, width, height) {
       chart = echarts.init(canvas, null, {
@@ -189,7 +191,7 @@ export default {
       title: this.thing,
       // the page to share
       // the parameters are to identify a specific event
-      path: '/pages/start?statID=' + this.sessionKey + '&eventKey=' + this.eventKey,
+      path: '/pages/start?statID=' + this.sessionKey + '&eventKey=' + this.$route.query.eventKey,
       success: function (res) {
         console.log('stat_add.onShareAppMessage: success')
         that.addInvitation()

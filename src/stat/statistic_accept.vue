@@ -109,7 +109,7 @@ export default {
       // add invitation to server database and local storage
       //
       this.$http.get('statistics/addReply', {
-        sessionKey: this.sessionKey,
+        sessionKey: this.statID,
         eventKey: this.eventKey,
         reply: JSON.stringify(this.reply)
       }).then(d => {

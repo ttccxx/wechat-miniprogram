@@ -24,7 +24,6 @@
 <script>
 import Vue from 'vue'
 import { mapState } from 'vuex'
-
 export default {
   data () {
     return {
@@ -46,7 +45,6 @@ export default {
       'invitations'
     ])
   },
-
   onLoad: function (res) {
   //
   // get invitation info from database
@@ -102,7 +100,6 @@ export default {
         }
       })
     },
-
     addLocal () {
     //
     // add invitation to local storage
@@ -143,7 +140,6 @@ export default {
         }]
       }
     },
-
     getSingleInvitation () {
     //
     // get the content of this invitation
@@ -223,5 +219,4 @@ button {
 .pick {
   width: 700 rpx;
 }
-
 </style>

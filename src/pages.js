@@ -12,6 +12,9 @@ module.exports = [
     path: 'pages/setting'
   },
   {
+    path: 'pages/dayView'
+  },
+  {
     path: 'pages/main'
   },
   {
@@ -67,6 +70,14 @@ module.exports = [
     config: {
       // 页面配置，即 page.json 的内容
       navigationBarTitleText: '统计'
+    }
+  },
+  {
+    path: 'packageA/logs',
+    subPackage: true,
+    config: {
+      // 页面配置，即 page.json 的内容
+      navigationBarTitleText: '查看启动日志'
     }
   }
 ]

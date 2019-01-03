@@ -81,10 +81,10 @@ export default {
     ]),
 
     addTodo () {
-      //
-      // triggered when the button is pressed
-      // add event into calendar
-      //
+    //
+    // triggered when the button is pressed
+    // add event into calendar
+    //
       if (this.date === '请选择日期' || this.time === '请选择时间') {
         wx.showModal({
           title: '提示',
@@ -109,18 +109,17 @@ export default {
         if (d.data.state === 'success') {
           console.log('添加成功' + d.data.state)
           this.addTodos({ time: this.time, date: this.date, thing: this.thing, place: this.place, eventKey: d.data.eventKey })
-          wx.showToast({
+          wx.showModal({
             title: '成功！',
             content: '已添加日程',
-            duration: 1000,
-            mask: true,
             success: function (res) {
-              wx.hideToast()
-              that.time = '请选择时间'
-              that.date = '请选择日期'
-              that.thing = ''
-              that.place = ''
-              that.$router.back()
+              if (res.confirm) {
+                that.time = '请选择时间'
+                that.date = '请选择日期'
+                that.thing = ''
+                that.place = ''
+                that.$router.back()
+              }
             }
           })
         } else if (d.data.state === 'fail') {
@@ -188,7 +187,7 @@ button {
   letter-spacing: 0.01em;
   line-height: 100rpx;
   min-width: 176rpx;
-  background-color: #00bfff;
+  background-color: #00BFFF;
   max-width: 100%;
   vertical-align: middle;
 }
@@ -207,7 +206,7 @@ input {
   font-size: 40rpx;
 }
 .weui-cell {
-  background-color: #00bfff;
+  background-color: #00BFFF;
   border-radius: 30rpx;
   padding: 20rpx 20rpx;
   font-size: 40rpx;

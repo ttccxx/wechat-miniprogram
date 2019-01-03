@@ -76,7 +76,6 @@ import { mapState } from 'vuex'
 import Calendar from 'mpvue-calendar'
 import 'mpvue-calendar/src/style.css'
 import { formatDate, formatNumber } from '../utils'
-
 export default {
   data () {
     return {
@@ -84,23 +83,19 @@ export default {
       currentDate: ''
     }
   },
-
   components: {
     Calendar
   },
-
   computed: {
     ...mapState([
       'todos',
       'events'
     ])
   },
-
   mounted () {
     this.todayDate = formatDate(new Date())
     this.currentDate = this.todayDate
   },
-
   methods: {
     select (val, val2) {
       val[1] = formatNumber(val[1])

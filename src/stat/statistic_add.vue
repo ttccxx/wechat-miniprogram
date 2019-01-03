@@ -183,6 +183,7 @@ export default {
     if (res.from === 'button') {
       console.log('stat_add: ' + res.target)
     }
+    console.log(this.eventKey)
     return {
       title: this.thing,
       // the page to share
